@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blogr landing page</title>
-    <link rel="stylesheet" href="blog.css" />
+    <link rel="stylesheet" href="style.css" />
     <script
       src="https://kit.fontawesome.com/0bcb27dbb4.js"
       crossorigin="anonymous"
@@ -238,6 +238,14 @@
         </ul>
       </section>
     </footer>
-    <script src="blog.js"></script>
+    <script>
+      /*jshint esversion: 6 */
+      const toggle = document.querySelector(".nav-toggle");
+      const links = document.querySelector(".links");
+
+      toggle.addEventListener("click", function () {
+        links.classList.toggle("show-links");
+      });
+    </script>
   </body>
 </html>
