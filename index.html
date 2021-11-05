@@ -17,7 +17,7 @@
              Header
     *******************************************************
     -->
-    <header>
+    <header class="header">
       <!--
          Navagation Bar
          -->
@@ -37,13 +37,16 @@
             <a href="http://">Contact</a>
             <i class="fas fa-angle-down"></i>
           </li>
+          <span class="dark-mode-toggle">
+            <i class="fas fa-moon" style="color: #fff"></i>
+          </span>
         </ul>
         <span class="nav-toggle">
           <i class="fas fa-bars"></i>
         </span>
         <div id="btns">
-          <button id="log-in-btn">Log-in</button>
-          <button id="sign-up-btn">Sign-up</button>
+          <button class="log-in-btn">Log-in</button>
+          <button class="sign-up-btn">Sign-up</button>
         </div>
       </nav>
       <!-- 
@@ -53,8 +56,8 @@
         <p class="header-title">A modern publishing platform</p>
         <p>Grow your audience build your online platform</p>
         <div class="btns">
-          <button id="btn-1">Start Free</button>
-          <button id="btn-2">Learn More</button>
+          <button class="btn-1">Start Free</button>
+          <button class="btn-2">Learn More</button>
         </div>
       </div>
     </header>
@@ -66,7 +69,7 @@
               Section - 1 
     *******************************************************
     -->
-    <section id="section-one">
+    <section class="section-one">
       <!-- Section - 1 - title -->
       <div id="section-title-one">
         <p>Designed for the future</p>
@@ -242,9 +245,23 @@
       /*jshint esversion: 6 */
       const toggle = document.querySelector(".nav-toggle");
       const links = document.querySelector(".links");
+      const darkModeToggle = document.querySelector(".dark-mode-toggle");
+      const header = document.querySelector(".header");
+      const logInButton = document.querySelector(".log-in-btn");
+      const signUpButton = document.querySelector(".sign-up-btn");
+      const btnOne = document.querySelector(".btn-1");
+      const btnTwo = document.querySelector(".btn-2");
 
       toggle.addEventListener("click", function () {
         links.classList.toggle("show-links");
+      });
+
+      darkModeToggle.addEventListener("click", function () {
+        header.classList.toggle("header-dark-mode");
+        logInButton.classList.toggle("log-in-btn-dark-mode");
+        signUpButton.classList.toggle("sign-up-btn-dark-mode");
+        btnOne.classList.toggle("btn-1-dark-mode");
+        btnTwo.classList.toggle("btn-2-dark-mode");
       });
     </script>
   </body>
