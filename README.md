@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Git Hub](https://github.com/amr8644/Blogr-Landing-Page)
+- Live Site URL: [Live Site](https://gallant-villani-1e6f36.netlify.app/)
 
 ## My process
 
