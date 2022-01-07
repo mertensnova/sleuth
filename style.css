@@ -71,14 +71,7 @@ body {
   font-size: 18px;
   flex-direction: column;
   background-position: right;
-  background-image: url(file:///C:/Users/USER/Desktop/Amr%20Ashebo-Projects/Blogr%20landing%20page/images/bg-pattern-intro.svg);
-}
-/* 
-Dark Mode: Header
- */
-.header-dark-mode {
-  background-color: #000000;
-  background-image: none;
+  background-image: url(./images/bg-pattern-intro.svg);
 }
 .header nav h1 {
   margin-left: 40px;
@@ -153,16 +146,7 @@ Dark Mode: Header
   color: var(--Light-red);
   background-color: var(--text);
 }
-/*
- Dark Mode: Log-in / Sign up Buttons 
-*/
-.log-in-btn-dark-mode {
-  background-color: #191a19;
-}
-.log-in-btn-dark-mode:hover {
-  background-color: var(--text);
-  color: #3e065f;
-}
+
 .sign-up-btn {
   width: 110px;
   font-weight: 700;
@@ -178,15 +162,6 @@ Dark Mode: Header
 .sign-up-btn:hover {
   color: var(--text);
   background-color: var(--CTA-hover-background);
-}
-
-.sign-up-btn-dark-mode {
-  background-color: #fff;
-  color: #3e065f;
-}
-.sign-up-btn-dark-mode:hover {
-  background-color: #3e065f;
-  color: #fff;
 }
 
 #header-title {
@@ -231,14 +206,6 @@ Dark Mode: Buttons 1 and 2
   color: var(--Light-red);
   background-color: var(--text);
 }
-.btn-2-dark-mode {
-  color: #fff;
-}
-.btn-2-dark-mode:hover {
-  border: #3e065f;
-  background-color: #3e065f;
-  color: #fff;
-}
 .btn-1 {
   width: 130px;
   font-weight: 500;
@@ -255,16 +222,7 @@ Dark Mode: Buttons 1 and 2
   color: var(--text);
   background-color: var(--CTA-hover-background);
 }
-.btn-1-dark-mode {
-  color: #3e065f;
-}
-.btn-1-dark-mode:hover {
-  color: #fff;
-  background-color: #3e065f;
-}
-.dark-mode-toggle {
-  cursor: pointer;
-}
+
 /* *******************************************************
 
 
@@ -300,7 +258,7 @@ Dark Mode: Buttons 1 and 2
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  background-image: url(file:///C:/Users/USER/Desktop/Amr%20Ashebo-Projects/Blogr%20landing%20page/images/illustration-editor-desktop.svg);
+  background-image: url(./images/illustration-editor-desktop.svg);
   height: auto;
 }
 #img-one img {
@@ -374,7 +332,7 @@ Dark Mode: Buttons 1 and 2
   background-position: left;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(file:///C:/Users/USER/Desktop/Amr%20Ashebo-Projects/Blogr%20landing%20page/images/bg-pattern-circles.svg);
+  background-image: url(/images/bg-pattern-circles.svg);
 }
 #img-two {
   width: 50%;
@@ -436,7 +394,7 @@ Dark Mode: Buttons 1 and 2
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  background-image: url(file:///C:/Users/USER/Desktop/Amr%20Ashebo-Projects/Blogr%20landing%20page/images/illustration-laptop-desktop.svg);
+  background-image: url(/images/illustration-laptop-desktop.svg);
   height: auto;
 }
 #img-three img {

@@ -37,9 +37,6 @@
             <a href="http://">Contact</a>
             <i class="fas fa-angle-down"></i>
           </li>
-          <span class="dark-mode-toggle">
-            <i class="fas fa-moon" style="color: #fff"></i>
-          </span>
         </ul>
         <span class="nav-toggle">
           <i class="fas fa-bars"></i>
@@ -78,10 +75,7 @@
       <!-- Section - 1 -image -->
       <div id="items-one">
         <div id="img-one">
-          <img
-            src="file:///C:/Users/USER/Desktop/Amr%20Ashebo-Projects/Blogr%20landing%20page/images/illustration-editor-mobile.svg"
-            alt="#"
-          />
+          <img src="/images/illustration-editor-desktop.svg" alt="#" />
         </div>
         <!-- Section - 1 -  articles -->
         <div class="texts">
@@ -119,10 +113,7 @@
     <section id="section-two">
       <!-- Section-2 image -->
       <div id="img-two">
-        <img
-          src="file:///C:/Users/USER/Desktop/Amr%20Ashebo-Projects/Blogr%20landing%20page/images/illustration-phones.svg"
-          alt=""
-        />
+        <img src="/images/illustration-phones.svg" alt="" />
       </div>
       <!-- Section -2 - image ENDS -->
       <!-- Section - 2- text  -->
@@ -245,23 +236,9 @@
       /*jshint esversion: 6 */
       const toggle = document.querySelector(".nav-toggle");
       const links = document.querySelector(".links");
-      const darkModeToggle = document.querySelector(".dark-mode-toggle");
-      const header = document.querySelector(".header");
-      const logInButton = document.querySelector(".log-in-btn");
-      const signUpButton = document.querySelector(".sign-up-btn");
-      const btnOne = document.querySelector(".btn-1");
-      const btnTwo = document.querySelector(".btn-2");
 
       toggle.addEventListener("click", function () {
         links.classList.toggle("show-links");
-      });
-
-      darkModeToggle.addEventListener("click", function () {
-        header.classList.toggle("header-dark-mode");
-        logInButton.classList.toggle("log-in-btn-dark-mode");
-        signUpButton.classList.toggle("sign-up-btn-dark-mode");
-        btnOne.classList.toggle("btn-1-dark-mode");
-        btnTwo.classList.toggle("btn-2-dark-mode");
       });
     </script>
   </body>
