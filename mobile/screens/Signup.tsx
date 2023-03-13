@@ -3,6 +3,11 @@ import { Button, Input, H2, YStack, Text, SizableText, XStack } from "tamagui";
 // import { useSignIn } from "@clerk/clerk-expo";
 
 const Signup = ({ navigation }: any) => {
+   // React.useLayoutEffect(() => {
+   //    navigation.setOptions({
+   //       headerShow:"n"
+   //    });
+   // });
    const [emailAddress, setEmailAddress] = React.useState("");
    const [password, setPassword] = React.useState("");
    const [username, setUsername] = React.useState("");
@@ -41,7 +46,11 @@ const Signup = ({ navigation }: any) => {
                size="$5"
                placeholder={`Password`}
             />
-            <Button onPress={handleSubmit} theme="blue" size="$5">
+            <Button
+               onPress={() => navigation.replace("Home")}
+               theme="blue"
+               size="$5"
+            >
                Signup
             </Button>
             <XStack ai={"center"}>

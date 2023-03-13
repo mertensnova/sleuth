@@ -1,9 +1,7 @@
 import * as React from "react";
 import { Button, Input, H2, YStack, SizableText, XStack } from "tamagui";
-// import { useSignIn } from "@clerk/clerk-expo";
 
 const Login = ({ navigation }: any) => {
-   //    const [emailAddress, setEmailAddress] = React.useState("");
    const [password, setPassword] = React.useState("");
    const [username, setUsername] = React.useState("");
 
@@ -29,7 +27,7 @@ const Login = ({ navigation }: any) => {
             <Input
                onChangeText={(username) => setUsername(username)}
                size="$5"
-               placeholder={`Usernmae`}
+               placeholder={`Username`}
             />
 
             <Input

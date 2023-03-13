@@ -1,13 +1,11 @@
 import * as React from "react";
-import { Avatar } from "tamagui";
-import ListItems from "../components/ListItems";
+import { Avatar, ListItem, Separator, XStack, YGroup } from "tamagui";
 
-const Home = ({ navigation }: any) => {
-   React.useLayoutEffect(() => {
-      navigation.setOptions({
-         title: "Amr Ashebo",
-         headerLeft: () => {
-            <>
+const ListItems = () => {
+   return (
+      <>
+         <YGroup marginTop="$10" size={"$20"}>
+            <YGroup.Item>
                <Avatar circular>
                   <Avatar.Image
                      accessibilityLabel="Cam"
@@ -15,15 +13,10 @@ const Home = ({ navigation }: any) => {
                   />
                   <Avatar.Fallback backgroundColor="$blue10" />
                </Avatar>
-            </>;
-         },
-      });
-   });
-   return (
-      <>
-         <ListItems />
+            </YGroup.Item>
+         </YGroup>
       </>
    );
 };
 
-export default Home;
+export default ListItems;
