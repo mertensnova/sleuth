@@ -1,17 +1,44 @@
 import * as React from "react";
 import { Button, Input, H2, YStack, SizableText, XStack } from "tamagui";
+import { supabase } from "../api/config";
 
 const Login = ({ navigation }: any) => {
    const [password, setPassword] = React.useState("");
-   const [username, setUsername] = React.useState("");
+   const [email, setEmail] = React.useState("");
 
    const handleSubmit = async () => {
       try {
-         // await setSession(completeSignIn.createdSessionId);
+         let { data, error } = await supabase.auth.signInWithPassword({
+            email: email,
+            password: password,
+         });
+
+         console.log("====================================");
+         console.log(data, error);
+         console.log("====================================");
       } catch (err: any) {
          console.log("Error:> " + (err.errors ? err.errors[0].message : err));
       }
    };
+
+   React.useLayoutEffect(() => {
+      navigation.setOptions({
+         headerShown: false,
+      });
+   }, []);
+
+   React.useEffect(() => {
+      const fetchData = async () => {
+         const { data } = await supabase.auth.getSession();
+         if (data) {
+            navigation.replace("Home");
+         }
+      };
+      // call the function
+      fetchData()
+         // make sure to catch any error
+         .catch(console.error);
+   }, []);
 
    return (
       <>
@@ -25,9 +52,9 @@ const Login = ({ navigation }: any) => {
                Login to your account
             </H2>
             <Input
-               onChangeText={(username) => setUsername(username)}
+               onChangeText={(email) => setEmail(email)}
                size="$5"
-               placeholder={`Username`}
+               placeholder={`Email`}
             />
 
             <Input

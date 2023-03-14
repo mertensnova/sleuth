@@ -4,7 +4,7 @@ import { Avatar, ListItem, Separator, XStack, YGroup } from "tamagui";
 const ListItems = () => {
    return (
       <>
-         <YGroup marginTop="$10" size={"$20"}>
+         {/* <YGroup marginTop="$10" size={"$20"}>
             <YGroup.Item>
                <Avatar circular>
                   <Avatar.Image
@@ -13,6 +13,30 @@ const ListItems = () => {
                   />
                   <Avatar.Fallback backgroundColor="$blue10" />
                </Avatar>
+            </YGroup.Item>
+         </YGroup> */}
+         <YGroup
+            als="center"
+            bordered
+            w={240}
+            size="$5"
+            separator={<Separator />}
+         >
+            <YGroup.Item>
+               <ListItem
+                  hoverTheme
+                  pressTheme
+                  title="Amr Ashebo"
+                  subTitle="Central"
+               />
+            </YGroup.Item>
+            <YGroup.Item>
+               <ListItem
+                  hoverTheme
+                  pressTheme
+                  title="Amr Ashebo"
+                  subTitle="Central"
+               />
             </YGroup.Item>
          </YGroup>
       </>

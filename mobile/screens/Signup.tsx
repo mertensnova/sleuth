@@ -1,24 +1,44 @@
 import * as React from "react";
 import { Button, Input, H2, YStack, Text, SizableText, XStack } from "tamagui";
-// import { useSignIn } from "@clerk/clerk-expo";
+import { supabase } from "../api/config";
 
 const Signup = ({ navigation }: any) => {
-   // React.useLayoutEffect(() => {
-   //    navigation.setOptions({
-   //       headerShow:"n"
-   //    });
-   // });
    const [emailAddress, setEmailAddress] = React.useState("");
    const [password, setPassword] = React.useState("");
-   const [username, setUsername] = React.useState("");
 
    const handleSubmit = async () => {
       try {
-         // await setSession(completeSignIn.createdSessionId);
+         let { data, error } = await supabase.auth.signUp({
+            email: emailAddress,
+            password: password,
+         });
+
+         console.log("====================================");
+         console.log(data, error);
+         console.log("====================================");
       } catch (err: any) {
          console.log("Error:> " + (err.errors ? err.errors[0].message : err));
       }
    };
+
+   React.useLayoutEffect(() => {
+      navigation.setOptions({
+         headerShown: false,
+      });
+   }, []);
+
+   React.useEffect(() => {
+      const fetchData = async () => {
+         const { data } = await supabase.auth.getSession();
+         if (data) {
+            navigation.replace("Home");
+         }
+      };
+      // call the function
+      fetchData()
+         // make sure to catch any error
+         .catch(console.error);
+   }, []);
 
    return (
       <>
@@ -31,11 +51,7 @@ const Signup = ({ navigation }: any) => {
             <H2 theme={"blue"} ai={"center"}>
                Create an account
             </H2>
-            <Input
-               onChangeText={(username) => setUsername(username)}
-               size="$5"
-               placeholder={`Username`}
-            />
+
             <Input
                onChangeText={(emailAddress) => setEmailAddress(emailAddress)}
                size="$5"
@@ -46,11 +62,7 @@ const Signup = ({ navigation }: any) => {
                size="$5"
                placeholder={`Password`}
             />
-            <Button
-               onPress={() => navigation.replace("Home")}
-               theme="blue"
-               size="$5"
-            >
+            <Button onPress={handleSubmit} theme="blue" size="$5">
                Signup
             </Button>
             <XStack ai={"center"}>

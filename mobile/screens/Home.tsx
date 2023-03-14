@@ -7,23 +7,17 @@ const Home = ({ navigation }: any) => {
       navigation.setOptions({
          title: "Amr Ashebo",
          headerLeft: () => {
-            <>
-               <Avatar circular>
-                  <Avatar.Image
-                     accessibilityLabel="Cam"
-                     src="https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80"
-                  />
-                  <Avatar.Fallback backgroundColor="$blue10" />
-               </Avatar>
-            </>;
+            <Avatar circular>
+               <Avatar.Image
+                  accessibilityLabel="Cam"
+                  src="https://images.unsplash.com/photo-1548142813-c348350df52b?&w=150&h=150&dpr=2&q=80"
+               />
+               <Avatar.Fallback backgroundColor="$blue10" />
+            </Avatar>;
          },
       });
    });
-   return (
-      <>
-         <ListItems />
-      </>
-   );
+   return <>{/* <ListItems /> */}</>;
 };
 
 export default Home;
