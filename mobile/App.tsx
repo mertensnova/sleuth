@@ -1,5 +1,5 @@
 import * as React from "react";
-// import { useColorScheme } from "react-native";
+import { useColorScheme } from "react-native";
 import { TamaguiProvider, Theme } from "tamagui";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -14,7 +14,7 @@ import Home from "./screens/Home";
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-   // const colorScheme = useColorScheme();
+   const colorScheme = useColorScheme();
 
    const [loaded] = useFonts({
       Inter: require("@tamagui/font-inter/otf/Inter-Medium.otf"),
