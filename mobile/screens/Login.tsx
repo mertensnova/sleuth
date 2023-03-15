@@ -45,14 +45,14 @@ const Login = ({ navigation }: any) => {
          <YStack
             theme={"blue"}
             justifyContent="center"
-            marginTop="$15"
+            // marginTop="$15"
             paddingHorizontal="$5"
             flex={1}
             backgroundColor="$gray1"
             space
          >
             <H3 theme={"blue"} ai={"center"}>
-               Login
+               LOGIN
             </H3>
             <Input
                keyboardType="email-address"

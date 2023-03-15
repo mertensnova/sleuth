@@ -1,9 +1,9 @@
 import * as React from "react";
-import { Button, Input, H2, YStack, SizableText, XStack } from "tamagui";
+import { Button, Input, H3, YStack, SizableText, XStack } from "tamagui";
 // import { supabase } from "../api/config";
 
 const Signup = ({ navigation }: any) => {
-   const [emailAddress, setEmailAddress] = React.useState("");
+   const [emailAddress, setEmail] = React.useState("");
    const [password, setPassword] = React.useState("");
 
    const handleSubmit = async () => {
@@ -43,20 +43,25 @@ const Signup = ({ navigation }: any) => {
       <>
          <YStack
             theme={"blue"}
-            marginTop="$15"
+            justifyContent="center"
             paddingHorizontal="$5"
-            space="$4"
+            flex={1}
+            backgroundColor="$gray1"
+            space
          >
-            <H2 theme={"blue"} ai={"center"}>
-               Create an account
-            </H2>
+            <H3 theme={"blue"} ai={"center"}>
+               CREATE AN ACCOUNT
+            </H3>
 
             <Input
-               onChangeText={(emailAddress) => setEmailAddress(emailAddress)}
+               keyboardType="email-address"
+               onChangeText={(email) => setEmail(email)}
                size="$5"
                placeholder={`Email`}
             />
+
             <Input
+               secureTextEntry={true}
                onChangeText={(password) => setPassword(password)}
                size="$5"
                placeholder={`Password`}
