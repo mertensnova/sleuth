@@ -1,30 +1,58 @@
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"log"
-	"net/http"
+	"flag"
+	"os"
 )
 
+var help string = `USAGE:
+    swiss [options] <input> 
+
+OPTIONS:
+  -h            Show this help message
+  -dns          Print verbose output
+  -robot        Print verbose output
+   
+EXAMPLES:
+   myprogram --config config.yaml --verbose data.csv
+   myprogram --timeout 60 data.txt > results.out
+   myprogram --threads 8 *.data
+`
+
 func main() {
+	value, option := Options()
 
-	var url string = "https://api.football-data.org/v4/matches"
-	client := http.Client{}
+	switch option {
+	case "-dns":
+		DNSLookUp(value)
+	case "-robot":
+		RobotScanner(value)
+	case "-link-grab":
+		LinkGrabber(value)
+	}
+}
 
-	request, err := http.NewRequest(http.MethodGet, url, nil)
-	if err != nil {
-		log.Fatalln(err.Error())
+func Options() (string, string) {
 
+	var robo_value string
+	var dns_value string
+    var link_value string
+
+	var option string = os.Args[1]
+
+	flag.StringVar(&dns_value, "dns", "google.com", "usage: -dns google.com")
+	flag.StringVar(&robo_value, "robot", "google.com", "usage: -robot google.com")
+	flag.StringVar(&link_value, "link-grab", "google.com", "usage: -robot google.com")
+	flag.Parse()
+
+	switch option {
+	case "-dns":
+		return dns_value, option
+	case "-robot":
+		return robo_value, option
+	case "-link-grab":
+		return link_value, option
 	}
 
-	response, err := client.Do(request)
-
-	body, err := ioutil.ReadAll(response.Body)
-
-	if err != nil {
-		log.Fatalln(err.Error())
-	}
-
-	fmt.Println(string(body))
+	return "", option
 }
