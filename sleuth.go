@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -45,7 +45,7 @@ func SendRequest(value string) []byte {
 		log.Fatalln(err)
 	}
 
-	body, err := ioutil.ReadAll(response.Body)
+	body, err := io.ReadAll(response.Body)
 	if err != nil {
 		log.Fatalln(err)
 	}
@@ -84,7 +84,7 @@ func HTTPGrabber(value string) {
 		log.Fatalln("http not found")
 	}
 
-    cmd := exec.Command(path, "-v" ,value)
+	cmd := exec.Command(path, "-v", value)
 
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
