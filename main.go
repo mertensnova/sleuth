@@ -13,11 +13,8 @@ OPTIONS:
   -dns          Print verbose output
   -robot        Print verbose output
   -ip           Print verbose output
+  -whois           Print verbose output
    
-EXAMPLES:
-   myprogram --config config.yaml --verbose data.csv
-   myprogram --timeout 60 data.txt > results.out
-   myprogram --threads 8 *.data
 `
 
 func main() {
@@ -27,6 +24,8 @@ func main() {
 	switch option {
 	case "-dns":
 		DNSLookUp(value)
+	case "-whois":
+		Whois(value)
 	case "-robot":
 		RobotScanner(value)
 	case "-link-grab":
@@ -35,8 +34,11 @@ func main() {
 		IPLookUP(value)
 	case "-cl":
 		ClickJackingTest(value)
-    case "-http":
-        HTTPGrabber(value)
+	case "-http":
+		HTTPGrabber(value)
+	case "-whatweb":
+		WhatWeb(value)
+
 	}
 }
 
@@ -48,6 +50,9 @@ func Options() (string, string) {
 	var ip_value string
 	var cl_value string
 	var http_value string
+	var whois_value string
+	var whatweb_value string
+
 	var option string = os.Args[1]
 
 	flag.StringVar(&dns_value, "dns", "google.com", "usage: -dns google.com")
@@ -56,7 +61,9 @@ func Options() (string, string) {
 	flag.StringVar(&ip_value, "ip", "172.217.6.196", "usage: -ip 172.217.6.196")
 	flag.StringVar(&cl_value, "cl", "google.com", "usage: -cl google.com")
 	flag.StringVar(&http_value, "http", "google.com", "usage: -http google.com")
-    flag.Parse()
+	flag.StringVar(&whois_value, "whois", "google.com", "usage: -whois google.com")
+	flag.StringVar(&whatweb_value, "whatweb", "google.com", "usage: -whatweb google.com")
+	flag.Parse()
 
 	switch option {
 	case "-dns":
@@ -71,7 +78,10 @@ func Options() (string, string) {
 		return cl_value, option
 	case "-http":
 		return http_value, option
-
+	case "-whois":
+		return whois_value, option
+	case "-whatweb":
+		return whatweb_value, option
 	}
 
 	return "", option

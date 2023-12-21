@@ -99,10 +99,6 @@ func HTTPGrabber(value string) {
 	os.Stderr.Sync()
 }
 
-func CloudFlareScraperCookie(value string) {
-
-}
-
 func IPLookUP(value string) {
 
 	var data LookUpResults
@@ -135,6 +131,52 @@ func DNSLookUp(value string) {
 	}
 
 	cmd := exec.Command(path, value, "+trace", "ANY")
+
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+
+	err = cmd.Run()
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	os.Stdout.Sync()
+	os.Stderr.Sync()
+}
+
+func Whois(value string) {
+
+	path, err := exec.LookPath("whois")
+
+	if err != nil {
+		log.Fatalln("dig not found")
+	}
+
+	cmd := exec.Command(path, value)
+
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+
+	err = cmd.Run()
+
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	os.Stdout.Sync()
+	os.Stderr.Sync()
+}
+
+func WhatWeb(value string) {
+
+	path, err := exec.LookPath("whatweb")
+
+	if err != nil {
+		log.Fatalln("dig not found")
+	}
+
+	cmd := exec.Command(path, value)
 
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
