@@ -25,8 +25,6 @@ git clone https://github.com/yourusername/sleuth.git
 cd sleuth
 go build
 ```
-## Usage
-Certainly! Based on the provided code, it seems like your tool accepts various options for information gathering. Here's a suggested usage section for your README.md:
 
 ## Usage
 
@@ -36,42 +34,49 @@ Sleuth provides multiple options for information gathering. You can specify the 
 
 - **-dns <domain>:**
   Retrieve DNS information for the specified domain.
+
   ```bash
   ./sleuth -dns example.com
   ```
 
 - **-robot <domain>:**
   Perform robots.txt analysis for the specified domain.
+
   ```bash
   ./sleuth -robot example.com
   ```
 
 - **-link-grab <domain>:**
   Extract links from the specified domain.
+
   ```bash
   ./sleuth -link-grab example.com
   ```
 
 - **-ip <ip_address>:**
   Retrieve detailed information about the specified IP address.
+
   ```bash
   ./sleuth -ip 172.217.6.196
   ```
 
 - **-cl <domain>:**
   Perform content discovery for the specified domain.
+
   ```bash
   ./sleuth -cl example.com
   ```
 
 - **-http <domain>:**
   Analyze HTTP headers for the specified domain.
+
   ```bash
   ./sleuth -http example.com
   ```
 
 - **-whois <domain>:**
   Retrieve WHOIS information for the specified domain.
+
   ```bash
   ./sleuth -whois example.com
   ```
@@ -89,6 +94,7 @@ Retrieve DNS information for a specific domain:
 ```bash
 ./sleuth -dns example.com
 ```
+
 You can replace `example.com` with the target domain or IP address and choose the appropriate option based on the information you want to gather.
 
 ## Contributing
